@@ -107,3 +107,103 @@ def fib(n):
 
 4. Break Tasks into Subtasks:
    Divide complex tasks into manageable steps.
+
+## Images and videos
+
+### Landscapes
+
+#### Controversies
+
+- Artist credits
+- Art?
+- Potential misuse?
+
+#### Dall-E
+
+- OpenAI
+- Diffusion based (remove noise)
+- Trained with millions of images
+- Available in Copilot and ChatGPT
+
+#### Midjourney
+
+- Extremely powerful
+- Discord interface
+- Fewer free capabilities
+
+#### Stable diffusion
+
+- Developed by Stability AI
+- Open source
+
+#### Sora
+
+- Diffusion based
+- Realistic videos
+- Struggles with some generations
+
+### DALL-E
+
+[DALL-E](https://openart.ai/home?utm_source=google&utm_medium=cpc&utm_campaign=Ser_EU_Midjourney_Dalle&utm_content=Dalle_Exact&utm_source=google&utm_medium=cpc&utm_campaign=21049810241&utm_term=dall%20e&gad_source=1&gad_campaignid=21049810241&gbraid=0AAAAAp6wzGQ1KED_IQgHk9O2Jh2au9MUG&gclid=Cj0KCQjw6bfHBhDNARIsAIGsqLholQxuFXgUuAgUht5OpmoqvhyaUunhoNakz3Igs8K7ThCdNZSzV7waAgLUEALw_wcB)
+
+### Midjourney
+
+[Midjourney](https://www.midjourney.com/home)
+
+## Adanced concepts
+
+### Custom GPT
+
+- Reduce repetitions
+- Shared wotkflows
+- Easy get started
+
+### Multimodality in AI
+
+- Text
+- Image
+- Video
+- Audio
+
+### Model fine tuning
+
+- Additional training for specialized model
+- Smaller model
+- Efficency
+- Fewer tokens in prompt
+
+### Interacting with API
+
+```js
+import OpenAI from "openai";
+
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY,
+});
+
+const response = await openai.responses.create({
+  model: "gpt-4o",
+  input: [
+    {
+      role: "system",
+      content: [
+        {
+          type: "input_text",
+          text: "Summarize content you are provided with for a second-grade student.",
+        },
+      ],
+    },
+    {
+      role: "user",
+      content: [
+        {
+          type: "input_text",
+          text: "Jupiter is the fifth planet from the Sun and the largest in the Solar System. It is a gas giant with a mass one-thousandth that of the Sun, but two-and-a-half times that of all the other planets in the Solar System combined. Jupiter is one of the brightest objects visible to the naked eye in the night sky, and has been known to ancient civilizations since before recorded history. It is named after the Roman god Jupiter.[19] When viewed from Earth, Jupiter can be bright enough for its reflected light to cast visible shadows,[20] and is on average the third-brightest natural object in the night sky after the Moon and Venus.",
+        },
+      ],
+    },
+  ],
+  temperature: 1,
+  max_output_tokens: 1024,
+});
+```
